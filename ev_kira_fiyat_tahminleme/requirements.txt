@@ -1,6 +1,6 @@
-joblib
+joblib 0.14
 numpy
 pandas
 lightgbm
-sklearn
+scikit-learn 0.22
 streamlit
