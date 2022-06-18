@@ -1,5 +1,3 @@
-channels:
-  - defaults
 dependencies:
   - _anaconda_depends=2021.11=py39_0
   - _ipyw_jlab_nb_ext_conf=0.1.0=py39haa95532_0
