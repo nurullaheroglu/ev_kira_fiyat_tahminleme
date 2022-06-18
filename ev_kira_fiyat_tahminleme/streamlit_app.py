@@ -87,7 +87,7 @@ df3 = model_prep(df2)
 X = df3.drop("fiyat", axis=1)
 
 user = X.iloc[[-1]]
-round(model.predict(user)[0],1)
+
 col1, col2, col3 = st.columns(3)
 my_bar = st.progress(0)
 
