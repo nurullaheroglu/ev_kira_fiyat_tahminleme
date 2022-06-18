@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 from helper import *
 
-model = joblib.load("final_model.pkl")
+model = joblib.load("ev_kira_fiyat_tahminleme/final_model.pkl")
 df1 = pd.read_csv("house_rent_prices_dataset.csv", index_col="Unnamed: 0").reset_index().drop("index", axis=1)
 
 anadolu_list = set([ilce for i, ilce in enumerate(df1["ilce"]) if df1["yaka"][i] == "Anadolu"])
