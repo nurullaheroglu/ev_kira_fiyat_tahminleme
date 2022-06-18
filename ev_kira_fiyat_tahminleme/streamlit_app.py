@@ -93,7 +93,7 @@ my_bar = st.progress(0)
 
 #foto ekleme
 from PIL import Image
-image = Image.open('photo.jpg')
+image = Image.open('ev_kira_fiyat_tahminleme/photo.jpg')
 st.image(image, use_column_width="always")
 
 with col2:
