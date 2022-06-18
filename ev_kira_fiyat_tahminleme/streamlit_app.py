@@ -98,8 +98,8 @@ with col2:
         for percent_complete in range(100):
             time.sleep(0.05)
             my_bar.progress(percent_complete + 1)
-        I1 = round(model.predict(user)[0] / 100 * 80, 0)
-        I4 = round(model.predict(user)[0] / 100 * 120, 0)
+        I1 = round(model.predict(user)[0] / 100 * 90, 0)
+        I4 = round(model.predict(user)[0] / 100 * 110, 0)
         with col2:
             st.success(f"Önerdiğimiz Fiyat Aralığı\n"
                        f"Minimum: {I1} TL\n"
