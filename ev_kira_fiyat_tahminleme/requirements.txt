@@ -1,4 +1,3 @@
-python
 joblib==0.14
 numpy
 pandas
