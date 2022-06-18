@@ -49,4 +49,3 @@
     - yahoofinance==0.0.2
     - yellowbrick==1.4
     - yfinance==0.1.70
-prefix: C:\Users\nurul\anaconda3
