@@ -11,7 +11,7 @@ anadolu_list = set([ilce for i, ilce in enumerate(df1["ilce"]) if df1["yaka"][i]
 avrupa_list = set([ilce for i, ilce in enumerate(df1["ilce"]) if df1["yaka"][i] == "Avrupa"])
 
 
-st.markdown("<h1 style='text-align: center; color: ##00a6f9;'>Ev Kira Fiyatı Tahminleme</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: ##00a6f9;'>İstanbul Ev Kiraları Tahminleme</h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center; color: #1B9E91;'>Lightgbm makine öğrenmesi yöntemini kullanarak geliştirdiğimiz bu modelde; İstanbul içindeki evlerin fiyatlarını tahmin ediyoruz.</h5>", unsafe_allow_html=True)
 
 option_yaka = st.sidebar.selectbox('Ev hangi yakada ?', ('Anadolu', 'Avrupa'))
@@ -94,7 +94,7 @@ image = Image.open('ev_kira_fiyat_tahminleme/photo.jpg')
 st.image(image, use_column_width="always")
 
 with col2:
-    if st.button("Kira Fiyatını Hesapla"):
+    if st.button("Kirayı Hesapla"):
         for percent_complete in range(100):
             time.sleep(0.05)
             my_bar.progress(percent_complete + 1)
