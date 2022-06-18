@@ -56,8 +56,8 @@ option_merkeze_yakin = st.sidebar.selectbox('Merkeze yakın mı ?', ('Hayır', '
 
 option_aidat_aralik = st.sidebar.selectbox('Verebileceğiniz aidat aralığını seçiniz', ('750 - 1000', '300 - 500', '500 - 750', '0 - 150', '150 - 300'))
 
-option_luks_mu = st.sidebar.selectbox('Lüks mü ?', ('Hayır', 'Evet'))
-
+#option_luks_mu = st.sidebar.selectbox('Lüks mü ?', ('Hayır', 'Evet'))
+option_luks_mu = 'Hayır'
 
 new_user = {"ilce": option_ilce,
             "m2_brut": option_m2_brut,
