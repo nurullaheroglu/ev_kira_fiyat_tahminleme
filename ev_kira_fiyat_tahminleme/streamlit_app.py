@@ -28,7 +28,6 @@ else:
         avrupa_list)
 
 option_m2_brut = st.sidebar.number_input('Metrekare brüt bilgisini giriniz.', 0, 500, step=1)
-#option_m2_brut = st.sidebar.slider('Metrekare brüt bilgisini giriniz.', 0, 500)
 
 option_bina_yasi = st.sidebar.selectbox('Bina yaş aralığını seçiniz.',
                                         ('0-5 arası','5-10 arası','11-15 arası', '16-20 arası','21-25 arası','26-30 arası','31 ve üzeri'))
