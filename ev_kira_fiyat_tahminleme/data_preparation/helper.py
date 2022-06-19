@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn.impute import KNNImputer
 
 
 def new_features(df):
@@ -92,6 +93,29 @@ def main_df_generate(df):
     df["bulundugu_kat"] = df["bulundugu_kat"].astype("int64")
     df["kat_sayisi"] = df["kat_sayisi"].astype("int64")
     df["banyo_sayisi"] = df["banyo_sayisi"].astype("int64")
+    
+
+    def knn_impute_aidat(df):
+        dff = df.drop("aciklama", axis=1)
+        dff = pd.get_dummies(dff, drop_first=True)
+
+        # değişkenlerin standartlatırılması
+        scaler = MinMaxScaler()
+        dff = pd.DataFrame(scaler.fit_transform(dff), columns=dff.columns)
+
+        # knn'in uygulanması.
+        imputer = KNNImputer(n_neighbors=5)
+        dff = pd.DataFrame(imputer.fit_transform(dff), columns=dff.columns)
+        dff = pd.DataFrame(scaler.inverse_transform(dff), columns=dff.columns)
+        df["aidat_imputed_knn"] = dff[["aidat"]]
+        df.drop("aidat", axis=1, inplace=True)
+        df["aidat_aralik"] = pd.cut(df["aidat_imputed_knn"], [0, 150, 300, 500, 750, 1000],
+                                    labels=["0 - 150", "150 - 300", "300 - 500", "500 - 750", "750 - 1000"])
+        df.drop("aidat_imputed_knn", axis=1, inplace=True)
+        print("Process complete.")
+        return df
+
+    df = knn_impute_aidat(df)
 
     try:
         list_ = [aciklama for aciklama in df["aciklama"] if (("ev arkadaşı" in aciklama) |
