@@ -53,6 +53,10 @@ option_oda = st.sidebar.number_input('Kaç odası var ?', 1, 10)
 option_salon = st.sidebar.number_input('Kaç tane salonu var ?', 0, 5)
 
 option_merkeze_yakin = st.sidebar.selectbox('Merkeze yakın mı ?', ('Hayır', 'Evet'))
+if option_merkeze_yakin == 'Hayır':
+    option_merkeze_yakin = 'Evet'
+else:
+    option_merkeze_yakin = 'Hayır'
 
 option_aidat_aralik = st.sidebar.selectbox('Verebileceğiniz aidat aralığını seçiniz', ('750 - 1000', '300 - 500', '500 - 750', '0 - 150', '150 - 300'))
 
